@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2014/11/14 20:13:25.000.984,=C:\Users\鹏\Desktop\RTXPluginsEx\NotetipsGroup\Res\TurquoiseGray.vsf</Transaction>
+    <Transaction>2014/11/14 20:13:25.000.962,C:\Users\鹏\Desktop\RTXPluginsEx\NotetipsGroup\Res\SapphireKamri.vsf=</Transaction>
+    <Transaction>2014/11/15 22:25:16.000.366,=C:\Users\鹏\Desktop\RTXPluginsEx\NotetipsGroup\NotetipsOcx\ufrmEditor.pas</Transaction>
+    <Transaction>2014/11/15 22:47:40.000.170,=C:\Users\鹏\Desktop\RTXPluginsEx\NotetipsGroup\NotetipsOcx\Unit1.pas</Transaction>
+    <Transaction>2014/11/15 22:47:49.000.246,C:\Users\鹏\Desktop\RTXPluginsEx\NotetipsGroup\NotetipsOcx\Unit1.pas=C:\Users\鹏\Desktop\RTXPluginsEx\NotetipsGroup\NotetipsOcx\uCommon.pas</Transaction>
+    <Transaction>2014/11/16 13:10:00.000.441,=C:\Users\鹏\Desktop\RTXPluginsEx\NotetipsGroup\Res\RTXStyle.vsf</Transaction>
+  </Transactions>
+</BorlandProject>

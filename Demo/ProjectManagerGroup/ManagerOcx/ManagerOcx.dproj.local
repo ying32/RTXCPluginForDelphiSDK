@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2014/11/10 19:37:53.000.449,=C:\Users\鹏\Documents\Embarcadero\Studio\Projects\Project1.ridl</Transaction>
+    <Transaction>2014/11/10 19:37:53.000.469,=C:\Users\鹏\Documents\Embarcadero\Studio\Projects\Project1_TLB.pas</Transaction>
+    <Transaction>2014/11/10 19:38:19.000.749,C:\Users\鹏\Documents\Embarcadero\Studio\Projects\Project1_TLB.pas=C:\Users\鹏\Desktop\ProjectManagerGroup\ManagerOcx\Project1_TLB.pas</Transaction>
+    <Transaction>2014/11/10 19:38:19.000.656,C:\Users\鹏\Documents\Embarcadero\Studio\Projects\Project1.ridl=C:\Users\鹏\Desktop\ProjectManagerGroup\ManagerOcx\ManagerOcx.ridl</Transaction>
+    <Transaction>2014/11/10 19:38:19.000.755,C:\Users\鹏\Desktop\ProjectManagerGroup\ManagerOcx\Project1_TLB.pas=C:\Users\鹏\Desktop\ProjectManagerGroup\ManagerOcx\ManagerOcx_TLB.pas</Transaction>
+    <Transaction>2014/11/10 19:38:33.000.159,C:\Users\鹏\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\鹏\Desktop\ProjectManagerGroup\ManagerOcx\ManagerOcx.dproj</Transaction>
+    <Transaction>2014/11/10 19:49:36.000.936,C:\Users\鹏\Desktop\ProjectManagerGroup\ManagerOcx\ManagerOcx_TLB.pas=C:\Users\鹏\Desktop\ProjectManagerGroup\ManagerOcx\ManagerOcxLib_TLB.pas</Transaction>
+    <Transaction>2014/11/10 19:52:19.000.747,=C:\Users\鹏\Desktop\ProjectManagerGroup\ManagerOcx\Unit1.pas</Transaction>
+    <Transaction>2014/11/10 19:54:03.000.329,C:\Users\鹏\Desktop\ProjectManagerGroup\ManagerOcx\Unit1.pas=C:\Users\鹏\Desktop\ProjectManagerGroup\ManagerOcx\ProjectManagerTabForm.pas</Transaction>
+    <Transaction>2014/11/10 19:54:03.000.329,C:\Users\鹏\Desktop\ProjectManagerGroup\ManagerOcx\Unit1.dfm=C:\Users\鹏\Desktop\ProjectManagerGroup\ManagerOcx\ProjectManagerTabForm.dfm</Transaction>
+    <Transaction>2014/11/10 20:31:57.000.382,C:\Users\鹏\Desktop\ProjectManagerGroup\ManagerOcx\ProjectManagerTabForm.pas=</Transaction>
+    <Transaction>2014/11/10 20:34:17.000.475,=C:\Users\鹏\Desktop\ProjectManagerGroup\ManagerOcx\Unit1.pas</Transaction>
+    <Transaction>2014/11/10 20:35:51.000.891,=C:\Users\鹏\Desktop\ProjectManagerGroup\ManagerOcx\Unit1.pas</Transaction>
+    <Transaction>2014/11/10 21:15:05.000.276,=C:\Users\鹏\Desktop\ProjectManagerGroup\ManagerOcx\ProjectManagerTabForm.pas</Transaction>
+    <Transaction>2014/11/10 21:17:27.000.344,=C:\Users\鹏\Desktop\ProjectManagerGroup\ManagerOcx\Unit1.pas</Transaction>
+    <Transaction>2014/11/10 21:18:24.000.970,=C:\Users\鹏\Desktop\ProjectManagerGroup\ManagerOcx\Unit1.pas</Transaction>
+    <Transaction>2014/11/10 21:18:43.000.424,C:\Users\鹏\Desktop\ProjectManagerGroup\ManagerOcx\ManagerOcxLib.ridl=C:\Users\鹏\Desktop\ProjectManagerGroup\ManagerOcx\ManagerOcx.ridl</Transaction>
+    <Transaction>2014/11/10 21:19:08.000.714,=C:\Users\鹏\Desktop\ProjectManagerGroup\ManagerOcx\Unit1.pas</Transaction>
+    <Transaction>2014/11/10 21:19:25.000.643,C:\Users\鹏\Desktop\ProjectManagerGroup\ManagerOcx\ProjectManagerTabForm.pas=C:\Users\鹏\Desktop\ProjectManagerGroup\ManagerOcx\Unit1.pas</Transaction>
+    <Transaction>2014/11/10 21:19:25.000.643,C:\Users\鹏\Desktop\ProjectManagerGroup\ManagerOcx\ProjectManagerTabForm.dfm=C:\Users\鹏\Desktop\ProjectManagerGroup\ManagerOcx\Unit1.dfm</Transaction>
+    <Transaction>2014/11/10 21:52:03.000.936,C:\Users\鹏\Desktop\ProjectManagerGroup\ManagerOcx\ProjectManagerTabForm.pas=</Transaction>
+    <Transaction>2014/11/10 21:53:20.000.938,=C:\Users\鹏\Desktop\ProjectManagerGroup\ManagerOcx\Unit1.pas</Transaction>
+    <Transaction>2014/11/10 21:59:10.000.992,=C:\Users\鹏\Desktop\ProjectManagerGroup\ManagerOcx\Unit1.pas</Transaction>
+    <Transaction>2014/11/10 21:59:39.000.427,C:\Users\鹏\Desktop\ProjectManagerGroup\ManagerOcx\Unit1.pas=C:\Users\鹏\Desktop\ProjectManagerGroup\ManagerOcx\uProjectManagerOleTab.pas</Transaction>
+    <Transaction>2014/11/10 21:59:46.000.463,=C:\Users\鹏\Desktop\ProjectManagerGroup\ManagerOcx\Unit1.pas</Transaction>
+    <Transaction>2014/11/10 22:00:02.000.657,C:\Users\鹏\Desktop\ProjectManagerGroup\ManagerOcx\Unit1.pas=C:\Users\鹏\Desktop\ProjectManagerGroup\ManagerOcx\uTabForm.pas</Transaction>
+    <Transaction>2014/11/10 22:00:02.000.657,C:\Users\鹏\Desktop\ProjectManagerGroup\ManagerOcx\Unit1.dfm=C:\Users\鹏\Desktop\ProjectManagerGroup\ManagerOcx\uTabForm.dfm</Transaction>
+    <Transaction>2014/11/10 23:37:44.000.320,C:\Users\鹏\Desktop\ProjectManagerGroup\ManagerOcx\uProjectManagerOleTab.pas=</Transaction>
+    <Transaction>2014/11/10 23:39:02.000.390,=C:\Users\鹏\Desktop\ProjectManagerGroup\ManagerOcx\ProjectManagerTabForm.pas</Transaction>
+  </Transactions>
+</BorlandProject>

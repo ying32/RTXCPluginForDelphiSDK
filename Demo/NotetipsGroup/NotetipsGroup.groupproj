@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{5BC1E788-AFB2-45B9-A998-E7B8031A139A}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="RTXCNotetips\RTXCNotetips.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="NotetipsOcx\RTXCNotetipsOcx.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="RTXCNotetips">
+        <MSBuild Projects="RTXCNotetips\RTXCNotetips.dproj"/>
+    </Target>
+    <Target Name="RTXCNotetips:Clean">
+        <MSBuild Projects="RTXCNotetips\RTXCNotetips.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RTXCNotetips:Make">
+        <MSBuild Projects="RTXCNotetips\RTXCNotetips.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="RTXCNotetipsOcx">
+        <MSBuild Projects="NotetipsOcx\RTXCNotetipsOcx.dproj"/>
+    </Target>
+    <Target Name="RTXCNotetipsOcx:Clean">
+        <MSBuild Projects="NotetipsOcx\RTXCNotetipsOcx.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RTXCNotetipsOcx:Make">
+        <MSBuild Projects="NotetipsOcx\RTXCNotetipsOcx.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="RTXCNotetips;RTXCNotetipsOcx"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="RTXCNotetips:Clean;RTXCNotetipsOcx:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="RTXCNotetips:Make;RTXCNotetipsOcx:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

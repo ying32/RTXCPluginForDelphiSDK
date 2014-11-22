@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2014/11/13 20:55:13.000.842,=C:\Users\鹏\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2014/11/13 20:56:49.000.973,C:\Users\鹏\Desktop\RTXPlugins\RTXCMakeTemplate\uMain.dfm=C:\Users\鹏\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2014/11/13 20:56:49.000.973,C:\Users\鹏\Desktop\RTXPlugins\RTXCMakeTemplate\uMain.pas=C:\Users\鹏\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2014/11/13 20:56:57.000.918,C:\Users\鹏\Desktop\RTXPlugins\RTXCMakeTemplate\RTXCMakeTemplate.dproj=C:\Users\鹏\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2014/11/14 09:34:59.000.996,=C:\Users\Windows\Desktop\RTXPlugins\RTXCMakeTemplate\Bin\RTXCActiveX.zip</Transaction>
+    <Transaction>2014/11/14 13:16:18.000.513,=C:\Users\Windows\Desktop\RTXPlugins\RTXCMakeTemplate\Bin\RTXCPlugin.zip</Transaction>
+  </Transactions>
+</BorlandProject>

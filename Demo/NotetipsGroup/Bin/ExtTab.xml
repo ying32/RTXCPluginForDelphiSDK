@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="gb2312"?> 
+<Root> 
+<ExtTab GUID="{C2678E0F-AB4D-4E49-B9E5-629EBB788998}" Title="备忘录" IconFile="notes.ico" Enabled="1"> 
+RTXCNotetipsOcx.ocx 
+</ExtTab> 
+</Root> 

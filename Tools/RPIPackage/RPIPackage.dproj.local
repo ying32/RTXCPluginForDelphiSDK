@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2014/10/28 09:48:57.000.902,=C:\Users\Windows\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2014/11/06 10:06:18.000.429,=C:\Users\Windows\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2014/11/11 15:14:54.000.596,=C:\Users\Windows\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2014/11/13 09:30:34.788,=C:\Users\Windows\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2014/11/13 09:30:57.161,C:\Users\Windows\Desktop\RTXPlugins\RPIPackage\uMain.pas=C:\Users\Windows\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2014/11/13 09:30:57.161,C:\Users\Windows\Desktop\RTXPlugins\RPIPackage\uMain.dfm=C:\Users\Windows\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2014/11/13 09:31:03.414,C:\Users\Windows\Desktop\RTXPlugins\RPIPackage\RPIPackage.dproj=C:\Users\Windows\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

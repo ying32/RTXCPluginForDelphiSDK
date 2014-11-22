@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="gb2312"?> 
+<Root> 
+<ExtTab GUID="{99357522-19D5-4B7B-81B9-D0ADD44222AB}" Title="项目管理器" IconFile="love.ico" Enabled="1"> 
+proRTXCActiveXContainer.ocx 
+</ExtTab> 
+</Root> 

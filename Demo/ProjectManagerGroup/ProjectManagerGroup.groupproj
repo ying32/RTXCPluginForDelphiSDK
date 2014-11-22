@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid><%DPRGUID%></ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="<%PROJECTNAME%>Ocx\RTXC<%PROJECTNAME%>Ocx.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="<%PROJECTNAME%>\RTXC<%PROJECTNAME%>.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="<%PROJECTNAME%>Ocx">
+        <MSBuild Projects="<%PROJECTNAME%>Ocx\<%PROJECTNAME%>Ocx.dproj"/>
+    </Target>
+    <Target Name="<%PROJECTNAME%>Ocx:Clean">
+        <MSBuild Projects="<%PROJECTNAME%>Ocx\<%PROJECTNAME%>Ocx.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="<%PROJECTNAME%>Ocx:Make">
+        <MSBuild Projects="<%PROJECTNAME%>Ocx\<%PROJECTNAME%>Ocx.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ManagerOcx">
+        <MSBuild Projects="ManagerOcx\ManagerOcx.dproj"/>
+    </Target>
+    <Target Name="ManagerOcx:Clean">
+        <MSBuild Projects="ManagerOcx\ManagerOcx.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ManagerOcx:Make">
+        <MSBuild Projects="ManagerOcx\ManagerOcx.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="<%PROJECTNAME%>Ocx;<%PROJECTNAME%>Ocx"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="<%PROJECTNAME%>Ocx:Clean;<%PROJECTNAME%>Ocx:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="<%PROJECTNAME%>Ocx:Make;<%PROJECTNAME%>Ocx:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

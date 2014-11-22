@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="gb2312"?> 
+<Root> 
+<ExtTab GUID="{6FA77186-AF8D-4B6B-AC5C-6B25F29AA5E0}" Title="项目管理器" IconFile="Globe.ico" Enabled="1"> 
+ManagerOcx.ocx 
+</ExtTab> 
+</Root> 
