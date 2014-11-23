@@ -67,7 +67,7 @@ type
     property OnEvent_: TOnEvent read FOnEvent write FOnEvent;
   end;
 
-
+(*
   TInitCtrlEvent = procedure(Sender: TObject; ARtxRoot: IRTXCRoot) of object;
 
   TRTXPluginTab = class(TAutoIntfObject, IRTXPluginTab)
@@ -92,7 +92,7 @@ type
     property OnEnterExtTab: TNotifyEvent read FOnEnterExtTab write FOnEnterExtTab;
     property OnLeaveExtTab: TNotifyEvent read FOnLeaveExtTab write FOnLeaveExtTab;
   end;
-
+*)
 
 implementation
 
@@ -139,7 +139,7 @@ begin
     FOnEvent(id, pData, pRet, Result)
 end;
 
-
+(*
 
 { TRTXPluginTab }
 
@@ -174,6 +174,7 @@ begin
   if Assigned(FOnLeaveExtTab) then
     FOnLeaveExtTab(Self);
   Result := S_OK;
-end;
+end; 
+*)
 
 end.
