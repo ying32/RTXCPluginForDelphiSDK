@@ -161,7 +161,7 @@ type
 var
   Obj: Cardinal;
 begin
-  Obj := Cardinal(Pointer(FClientObjectsModule.Object_[RTX_CLIENT_OBJECTS_IDENTIFIER_ACTIONMGR]));
+  Obj := Cardinal(Pointer(FClientObjectsModule.Object_[Identifier]));
   Result := PT(@Obj)^;
 end;
 
