@@ -381,7 +381,14 @@ begin
   begin
     TipsItem := FList[Item.Index];
     lbl_subject.Caption := TipsItem.Subject;
-    lbl_tipsdatetime.Caption := DateToStr(TipsItem.mDate) + ' ' + TimeToStr(TipsItem.mTime);
+  //  lbl_tipsdatetime.Caption := DateToStr(TipsItem.mDate) + ' ' + TimeToStr(TipsItem.mTime);
+
+    case TipsItem.TipsType of
+      0 : lbl_tipsdatetime.Caption := DateToStr(TipsItem.mDate) + ' ' + TimeToStr(TipsItem.mTime);
+      1 : lbl_tipsdatetime.Caption := TimeToStr(TipsItem.mTime);
+      2 : lbl_tipsdatetime.Caption := WeekToStr(DayOfWeek(TipsItem.mDate)) + ' ' + TimeToStr(TipsItem.mTime);
+    end;
+
     edt_Receivers.Text := TipsItem.Receivers;
     mmo_body.Text := TipsItem.Body;
   end;

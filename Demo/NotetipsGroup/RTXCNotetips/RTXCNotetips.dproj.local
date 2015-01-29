@@ -2,13 +2,13 @@
 <BorlandProject>
 	<Transactions>
     <Transaction>2014/11/14 19:53:47.000.448,=C:\Users\鹏\Desktop\RTXPluginsEx\NotetipsGroup\RTXCNotetips\Unit1.pas</Transaction>
-    <Transaction>2014/11/14 19:54:11.000.335,C:\Users\鹏\Desktop\RTXPluginsEx\NotetipsGroup\NotetipsOcx\ufrmEditor.pas=C:\Users\鹏\Desktop\RTXPluginsEx\NotetipsGroup\RTXCNotetips\Unit1.pas</Transaction>
-    <Transaction>2014/11/14 19:54:11.000.335,C:\Users\鹏\Desktop\RTXPluginsEx\NotetipsGroup\NotetipsOcx\ufrmEditor.dfm=C:\Users\鹏\Desktop\RTXPluginsEx\NotetipsGroup\RTXCNotetips\Unit1.dfm</Transaction>
+    <Transaction>2014/11/14 19:54:11.000.335,C:\Users\鹏\Desktop\RTXPluginsEx\NotetipsGroup\RTXCNotetips\Unit1.pas=C:\Users\鹏\Desktop\RTXPluginsEx\NotetipsGroup\NotetipsOcx\ufrmEditor.pas</Transaction>
+    <Transaction>2014/11/14 19:54:11.000.335,C:\Users\鹏\Desktop\RTXPluginsEx\NotetipsGroup\RTXCNotetips\Unit1.dfm=C:\Users\鹏\Desktop\RTXPluginsEx\NotetipsGroup\NotetipsOcx\ufrmEditor.dfm</Transaction>
     <Transaction>2014/11/14 20:13:54.000.424,=C:\Users\鹏\Desktop\RTXPluginsEx\NotetipsGroup\Res\TurquoiseGray.vsf</Transaction>
     <Transaction>2014/11/14 20:13:54.000.338,C:\Users\鹏\Desktop\RTXPluginsEx\NotetipsGroup\Res\SapphireKamri.vsf=</Transaction>
     <Transaction>2014/11/14 21:15:25.000.407,=C:\Users\鹏\Desktop\RTXPluginsEx\NotetipsGroup\RTXCNotetips\Unit1.pas</Transaction>
-    <Transaction>2014/11/14 21:15:36.000.818,C:\Users\鹏\Desktop\RTXPluginsEx\NotetipsGroup\RTXCNotetips\Unit1.pas=C:\Users\鹏\Desktop\RTXPluginsEx\NotetipsGroup\RTXCNotetips\ufrmTipsWindow.pas</Transaction>
-    <Transaction>2014/11/14 21:15:36.000.818,C:\Users\鹏\Desktop\RTXPluginsEx\NotetipsGroup\RTXCNotetips\Unit1.dfm=C:\Users\鹏\Desktop\RTXPluginsEx\NotetipsGroup\RTXCNotetips\ufrmTipsWindow.dfm</Transaction>
+    <Transaction>2014/11/14 21:15:36.000.818,C:\Users\鹏\Desktop\RTXPluginsEx\NotetipsGroup\RTXCNotetips\ufrmTipsWindow.dfm=C:\Users\鹏\Desktop\RTXPluginsEx\NotetipsGroup\RTXCNotetips\Unit1.dfm</Transaction>
+    <Transaction>2014/11/14 21:15:36.000.818,C:\Users\鹏\Desktop\RTXPluginsEx\NotetipsGroup\RTXCNotetips\ufrmTipsWindow.pas=C:\Users\鹏\Desktop\RTXPluginsEx\NotetipsGroup\RTXCNotetips\Unit1.pas</Transaction>
     <Transaction>2014/11/16 13:11:43.000.943,=C:\Users\鹏\Desktop\RTXPluginsEx\NotetipsGroup\Res\RTXStyle.vsf</Transaction>
   </Transactions>
 </BorlandProject>

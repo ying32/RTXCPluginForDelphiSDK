@@ -20,6 +20,7 @@ unit RTXC.Funcs;
 interface
 
 uses
+  System.SysUtils,
   Variants,
   RTXCAPILib_TLB;
 
@@ -30,6 +31,7 @@ type
     class function GetSelectUserName(Parameter: OleVariant): string; static;
 //    class procedure SendMessage(); static;
     class function NewGUID: string; static;
+    class function GetModulePath: string; static;
   end;
 
 implementation
@@ -38,6 +40,11 @@ uses
   RTXC.Consts;
 
 { TRTXCFuncs }
+
+class function TRTXCFuncs.GetModulePath: string;
+begin
+  Result := ExtractFilePath(GetModuleName(HInstance));
+end;
 
 class function TRTXCFuncs.GetSelectUserName(Parameter: OleVariant): string;
 var
