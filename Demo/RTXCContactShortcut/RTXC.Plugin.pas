@@ -28,7 +28,7 @@ uses
   Comserv,
   Variants,
   SysUtils,
-  yzzShortLink,
+  ShortLink,
   RTXCContactShortcutPluginLib_TLB,
   RTXCAPILib_TLB,
   CLIENTOBJECTSLib_TLB,
