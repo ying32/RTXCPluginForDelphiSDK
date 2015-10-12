@@ -1,18 +1,18 @@
 //***************************************************************************
 //
-//       Ãû³Æ£ºRTXC.Plugin.pas
-//       ¹¤¾ß£ºRAD Studio XE6
-//       ÈÕÆÚ£º2014/11/8 15:11:21
-//       ×÷Õß£ºying32
-//       QQ  £º396506155
-//       MSN £ºying_32@live.cn
-//       E-mail£ºyuanfen3287@vip.qq.com
-//       Website£ºhttp://www.ying32.com
+//       åç§°ï¼šRTXC.Plugin.pas
+//       å·¥å…·ï¼šRAD Studio XE6
+//       æ—¥æœŸï¼š2014/11/8 15:11:21
+//       ä½œè€…ï¼šying32
+//       QQ  ï¼š396506155
+//       MSN ï¼šying_32@live.cn
+//       E-mailï¼šyuanfen3287@vip.qq.com
+//       Websiteï¼šhttp://www.ying32.com
 //
 //---------------------------------------------------------------------------
 //
-//       ±¸×¢£ºRTX¿Í»§¶Ë²å¼şÀà
-//       ±¾´úÂëÎªRTXCMakeTemplate×Ô¶¯Éú³É 2015/01/29 14:44:32
+//       å¤‡æ³¨ï¼šRTXå®¢æˆ·ç«¯æ’ä»¶ç±»
+//       æœ¬ä»£ç ä¸ºRTXCMakeTemplateè‡ªåŠ¨ç”Ÿæˆ 2015/01/29 14:44:32
 //
 //
 //***************************************************************************
@@ -28,7 +28,7 @@ uses
   Comserv,
   Variants,
   SysUtils,
-  ShortLink,
+  yzzShortLink,
   RTXCContactShortcutPluginLib_TLB,
   RTXCAPILib_TLB,
   CLIENTOBJECTSLib_TLB,
@@ -47,7 +47,7 @@ type
     function GetClientObjsModule: IClientObjectsModule;
   protected
     /// <remarks>
-    ///   ½Ó¿Ú²¿·ÖÊµÏÖ
+    ///   æ¥å£éƒ¨åˆ†å®ç°
     /// </remarks>
     function  Get_Identifier: WideString; safecall;
     function  Get_ModuleSite: IDispatch; safecall;
@@ -61,10 +61,10 @@ type
     function GetModuleObject<T>(const Identifier: string): T;
     procedure SendMessage(const Receiver, ATitle, AMsg: string);
 
-    // ²Ëµ¥Ïà¹ØµÄÁ½¸öÊÂ¼ş
+    // èœå•ç›¸å…³çš„ä¸¤ä¸ªäº‹ä»¶
     procedure MenuOnInvoke(UIType: RTXC_UI_TYPE; Id: Integer; Parameter: OleVariant);
-    // MenuOnQueryStateº¯ÊıÖĞTextµÄ²ÎÊıÒ»¶¨ÒªÊÇvar, ×Ô¶¯Éú³ÉµÄ½Ó¿ÚÎÄ¼şÖĞÎªout,ÕâÑù»áÖ±½Ó
-    // Ôì³É²Ëµ¥Ìí¼Óºó²»»áÏÔÊ¾ÎÄ×Ö, Ô´ÓÚoutÓëvar¹Ø¼ü×ÖµÄÇø±ğ
+    // MenuOnQueryStateå‡½æ•°ä¸­Textçš„å‚æ•°ä¸€å®šè¦æ˜¯var, è‡ªåŠ¨ç”Ÿæˆçš„æ¥å£æ–‡ä»¶ä¸­ä¸ºout,è¿™æ ·ä¼šç›´æ¥
+    // é€ æˆèœå•æ·»åŠ åä¸ä¼šæ˜¾ç¤ºæ–‡å­—, æºäºoutä¸varå…³é”®å­—çš„åŒºåˆ«
     procedure MenuOnQueryState(UIType: RTXC_UI_TYPE; Id: Integer; Parameter: OleVariant;
       var Text: WideString; var State: RTXC_UI_ITEM_STATE);
   public
@@ -81,7 +81,7 @@ uses
 
 const
   MENU_SEND_SHOURTCUT_INDEX = 10210;
-  MENU_SHORTCUT_STRING = '·¢ËÍ×ÀÃæ¿ì½İ·½Ê½(&C)';
+  MENU_SHORTCUT_STRING = 'å‘é€æ¡Œé¢å¿«æ·æ–¹å¼(&C)';
 
 { TRTXCContactShortcutPlugin }
 
@@ -92,7 +92,7 @@ end;
 
 function TRTXCContactShortcutPlugin.Get_Info(Field: RTXC_PLUGIN_INFO_FIELD): WideString;
 begin
-  Result := '½«ÁªÏµÈË·¢ËÍµ½×ÀÃæ¿ì½İ·½Ê½£¡';
+  Result := 'å°†è”ç³»äººå‘é€åˆ°æ¡Œé¢å¿«æ·æ–¹å¼ï¼';
 end;
 
 function TRTXCContactShortcutPlugin.Get_ModuleSite: IDispatch;
@@ -102,20 +102,71 @@ end;
 
 function TRTXCContactShortcutPlugin.Get_Name: WideString;
 begin
-  Result := 'ÁªÏµÈË×ÀÃæ¿ì½İ·½Ê½';;
+  Result := 'è”ç³»äººæ¡Œé¢å¿«æ·æ–¹å¼';
 end;
 
 procedure TRTXCContactShortcutPlugin.MenuOnInvoke(UIType: RTXC_UI_TYPE;
   Id: Integer; Parameter: OleVariant);
 var
   S: string;
+  Session: IRTXCSession;
+  LReceivers: IRTXCDataCollection;
+  LRtxData: IRTXCData;
 begin
   case Id of
     MENU_SEND_SHOURTCUT_INDEX :
       begin
-        S := TRTXCFuncs.GetSelectUserName(Parameter);
-        if S <> '' then
-          CreateDesktopLink(S, TRTXCFuncs.GetModulePath + 'Shortcut.exe', S, '"' + S + '"');
+        case VarType(Parameter) of
+          varDispatch:
+            begin
+              LReceivers := IRTXCDataCollection(TVarData(VarAsType(Parameter, varDispatch)).VDispatch);
+              if LReceivers.Count > 0 then
+              begin
+                LRtxData := LReceivers.Item[1];
+                OutputDebugString(PChar('LRtxData.GetLong(RDK_TYPE) = ' + IntToStr(LRtxData.GetLong(RDK_TYPE))));
+                case LRtxData.GetLong(RDK_TYPE) of
+                  OBJECT_RTX_BUDDY :
+                    begin
+                      S := LRtxData.GetString(RDK_VALUE);
+                      if S <> '' then
+                        TShortLink.CreateDesktopLink(S, TRTXCFuncs.GetModulePath + 'Shortcut.exe', S, '"' + S + '"');
+                    end;
+                  // ä»¥ä¸‹ä¸¤ä¸ªæš‚ä¸èƒ½ç”¨
+                  OBJECT_RTX_GROUP :
+                    begin
+                      S := LRtxData.GetString(RDK_VALUE);
+                      OutputDebugString(PChar('OBJECT_RTX_GROUP = ' + S));
+                      //if not S.IsEmpty then
+                      //  OutputDebugString(PChar('OBJECT_RTX_GROUP = ' + S));
+                    end;
+                  OBJECT_RTX_SESSION :
+                    begin
+                      S := LRtxData.GetString(RDK_VALUE);
+                      OutputDebugString(PChar('OBJECT_RTX_SESSION ID=' + S));
+                      if S <> '' then
+                      begin
+                        Session := FRTXRoot.SessionManager.Session[S];
+                        if Assigned(Session) then
+                        begin
+                         S := Session.Topic;
+                         //TShortLink.CreateDesktopLink(S, TRTXCFuncs.GetModulePath + 'Shortcut.exe', S, '"' + S + '"');
+
+                          OutputDebugString(PChar(Format('Topic=%s, Initiator=%s, AppName=%s, Participant=%s, Type=%s, Id=%s',
+                              [
+                                 Session.Topic,
+                                 Session.Initiator,
+                                 Session.AppName,
+                                 Session.Participant,
+                                 Session.type_,
+                                 Session.Id
+                              ])));
+                        end;
+                      end;
+                    end;
+                end;
+              end;
+            end;
+        end;
       end;
   end;
 end;
@@ -124,6 +175,13 @@ procedure TRTXCContactShortcutPlugin.MenuOnQueryState(UIType: RTXC_UI_TYPE;
   Id: Integer; Parameter: OleVariant; var Text: WideString;
   var State: RTXC_UI_ITEM_STATE);
 begin
+//  case  Id of
+//    MENU_INDEX1 :
+//      begin
+//
+//        // èœå•çš„çŠ¶æ€
+//      end;
+//  end;
 end;
 
 procedure TRTXCContactShortcutPlugin.OnAccountChange;
@@ -156,26 +214,36 @@ begin
   FClientObjectsModule := GetClientObjsModule;
 
 
-  // Ìí¼Ó³£ÓÃÁªÏµÈËÓÒ¼ü²Ëµ¥ RTXC_UI_TYPE_MYCONTACTS_USERDEFINEDGROUP_USERÎª³£ÓÃÁªÏµÈË
+  // æ·»åŠ å¸¸ç”¨è”ç³»äººå³é”®èœå• RTXC_UI_TYPE_MYCONTACTS_USERDEFINEDGROUP_USERä¸ºå¸¸ç”¨è”ç³»äºº
   LMenu := GetModuleObject<IRTXCMenu>(RTX_CLIENT_OBJECTS_IDENTIFIER_MENU);
   LMenu.AddItem(False, -1, RTXC_UI_TYPE_MYCONTACTS_USERDEFINEDGROUP_USER, MENU_SEND_SHOURTCUT_INDEX,
     FMenuSink, MENU_SHORTCUT_STRING, '', RTXC_MENU_ITEM_SEPARATOR_ABOVE_AND_BELOW, 6, False);
 
-  // ×éÖ¯¼Ü¹¹ÈËÔ±ÓÒ¼ü²Ëµ¥ RTXC_UI_TYPE_ORG_STRUCT_USERÎª×éÖ¯¼Ü¹¹ÈËÔ±
+  // ç»„ç»‡æ¶æ„äººå‘˜å³é”®èœå• RTXC_UI_TYPE_ORG_STRUCT_USERä¸ºç»„ç»‡æ¶æ„äººå‘˜
   LMenu.AddItem(False, -1, RTXC_UI_TYPE_ORG_STRUCT_USER, MENU_SEND_SHOURTCUT_INDEX,
     FMenuSink, MENU_SHORTCUT_STRING, '', RTXC_MENU_ITEM_SEPARATOR_ABOVE_AND_BELOW, 6, False);
 
-  // ×î½üÁªÏµÈË RTXC_UI_TYPE_RECENTCONTACTS_SESSIONS_USER
+  // æœ€è¿‘è”ç³»äºº RTXC_UI_TYPE_RECENTCONTACTS_SESSIONS_USER
   LMenu.AddItem(False, -1, RTXC_UI_TYPE_RECENTCONTACTS_SESSIONS_USER, MENU_SEND_SHOURTCUT_INDEX,
     FMenuSink, MENU_SHORTCUT_STRING, '', RTXC_MENU_ITEM_SEPARATOR_ABOVE_AND_BELOW, 6, False);
 
-  // ²Ù×÷"²Ëµ¥ RTXC_UI_TYPE_MAINFRAME_ACTION
+  // æ“ä½œ"èœå• RTXC_UI_TYPE_MAINFRAME_ACTION
   LMenu.AddItem(False, -1, RTXC_UI_TYPE_MAINFRAME_ACTION, MENU_SEND_SHOURTCUT_INDEX,
     FMenuSink, MENU_SHORTCUT_STRING, '', RTXC_MENU_ITEM_SEPARATOR_ABOVE_AND_BELOW, 6, False);
 
-//  // ÔÚIM ´°¿ÚÌí¼ÓµÚÈı·½²Ëµ¥
+//  // åœ¨IM çª—å£æ·»åŠ ç¬¬ä¸‰æ–¹èœå•
 //  LMenu.AddItem(False, -1, RTXC_UI_TYPE_IM_THIRDPARTY, MENU_SEND_SHOURTCUT_INDEX,
-//    FMenuSink, MENU_SHORTCUT_STRING, '', RTXC_MENU_ITEM_SEPARATOR_ABOVE_AND_BELOW, 6, False);
+//    FMenuSink, 'å‘é€æ¡Œé¢å¿«æ·æ–¹å¼', '', RTXC_MENU_ITEM_SEPARATOR_ABOVE_AND_BELOW, 6, False);
+
+
+  // åœ¨è®¨è®ºç»„æ·»åŠ 
+  LMenu.AddItem(False, -1, RTXC_UI_TYPE_ALL_CONTACTS_DISCUSS_GROUP, MENU_SEND_SHOURTCUT_INDEX,
+    FMenuSink, MENU_SHORTCUT_STRING, '', RTXC_MENU_ITEM_SEPARATOR_ABOVE_AND_BELOW, 6, False);
+
+    // ä¸çŸ¥é“æ˜¯ä¸æ˜¯ç¾¤
+  LMenu.AddItem(False, -1, RTXC_UI_TYPE_ALL_CONTACTS_DISGROUP, MENU_SEND_SHOURTCUT_INDEX,
+    FMenuSink, MENU_SHORTCUT_STRING, '', RTXC_MENU_ITEM_SEPARATOR_ABOVE_AND_BELOW, 6, False);
+
 end;
 
 procedure TRTXCContactShortcutPlugin.OnUnload(Reason: RTXC_MODULE_UNLOAD_REASON);
@@ -188,6 +256,10 @@ begin
   LMenu.DelItem(RTXC_UI_TYPE_RECENTCONTACTS_SESSIONS_USER, MENU_SEND_SHOURTCUT_INDEX, FMenuSink);
   LMenu.DelItem(RTXC_UI_TYPE_MAINFRAME_ACTION, MENU_SEND_SHOURTCUT_INDEX, FMenuSink);
 //  LMenu.DelItem(RTXC_UI_TYPE_IM_THIRDPARTY, MENU_SEND_SHOURTCUT_INDEX, FMenuSink);
+  LMenu.DelItem(RTXC_UI_TYPE_ALL_CONTACTS_DISCUSS_GROUP, MENU_SEND_SHOURTCUT_INDEX, FMenuSink);
+  LMenu.DelItem(RTXC_UI_TYPE_ALL_CONTACTS_DISGROUP, MENU_SEND_SHOURTCUT_INDEX, FMenuSink);
+
+
   FMenuSink.Free;
 end;
 
